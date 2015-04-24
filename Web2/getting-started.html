@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting · Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+	height: 100%;
+	background-color: #DDD5CC;        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+.jumbotron {
+	margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 0px;
+    height: 250px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background: url('img/examples/slide-06.jpg');
+}
+
+      #wrap > .container {
+        padding-top: 60px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+      code {
+        font-size: 80%;
+      }
+
+    </style>
+    
+    
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    
+   
+    
+    
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="ico/favicon.png">
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+               <a href="index.html" class="brand">Jawa Timur</a>
+            <div class="container-narrow">
+	<ul class="nav nav-pills">
+              	<li><a href="index.html">Beranda</a></li>
+                <li><a href="Budaya.html">Budaya</a></li>
+				<li><a href="Wisata.html">Wisata</a></li>
+				<li class="active"><a href="Kuliner.html">Kuliner</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sejarah<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  	<li class="divider"></li>
+                    <li><a href="Sejarah.html#Prasejarah">Era Prasejarah</a></li>
+                    <li><a href="Sejarah.html#Klasik">Era Klasik</a></li>
+                    <li><a href="Sejarah.html#Kolonial">Era Kolonial</a></li>
+                    <li><a href="Sejarah.html#Kini">Era Kini</a></li>
+                    <li class="divider"></li>
+                  </ul>
+                </li>
+	</ul>
+</div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  
+</header>
+
+           
+           
+        </div>
+    </div>
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#Prasejarah"><i class="icon-chevron-right"></i> Era Prasejarah</a></li>
+          <li><a href="#Klasik"><i class="icon-chevron-right"></i> Era Klasik</a></li>
+          <li><a href="#Kolonial"><i class="icon-chevron-right"></i> Era Kolonial</a></li>
+          <li><a href="#Kini"><i class="icon-chevron-right"></i> Era Kini</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+
+        <!-- Prasejarah
+        ================================================== -->
+        <section id="Prasejarah">
+          <div class="page-header">
+            <h1>Era Prasejarah</h1>
+          </div>
+          <p class="lead">Jawa Timur sudah sejak Lama</p>
+
+          
+        </section>
+
+
+
+        <!-- File structure
+        ================================================== -->
+        <section id="Klasik">
+          <div class="page-header">
+            <h1>Era Klasik</h1>
+          </div>
+          <p class="lead">Within the download you'll find the following file structure and contents, logically grouping common assets and providing both compiled and minified variations.</p>
+          <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You'll see something like this:</p>
+<pre class="prettyprint">
+  bootstrap/
+  ├── css/
+  │   ├── bootstrap.css
+  │   ├── bootstrap.min.css
+  ├── js/
+  │   ├── bootstrap.js
+  │   ├── bootstrap.min.js
+  └── img/
+      ├── glyphicons-halflings.png
+      └── glyphicons-halflings-white.png
+</pre>
+          <p>This is the most basic form of Bootstrap: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>bootstrap.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
+          <p>Please note that all JavaScript plugins require jQuery to be included.</p>
+        </section>
+
+
+
+        <!-- Contents
+        ================================================== -->
+        <section id="Kolonial">
+          <div class="page-header">
+            <h1>Era Kolonial</h1>
+          </div>
+          <p class="lead">Bootstrap comes equipped with HTML, CSS, and JS for all sorts of things, but they can be summarized with a handful of categories visible at the top of the <a href="http://getbootstrap.com">Bootstrap documentation</a>.</p>
+
+          <h2>Docs sections</h2>
+          <h4><a href="http://twbs.github.com/bootstrap/scaffolding.html">Scaffolding</a></h4>
+          <p>Global styles for the body to reset type and background, link styles, grid system, and two simple layouts.</p>
+          <h4><a href="http://twbs.github.com/bootstrap/base-css.html">Base CSS</a></h4>
+          <p>Styles for common HTML elements like typography, code, tables, forms, and buttons. Also includes <a href="http://glyphicons.com">Glyphicons</a>, a great little icon set.</p>
+          <h4><a href="http://twbs.github.com/bootstrap/components.html">Components</a></h4>
+          <p>Basic styles for common interface components like tabs and pills, navbar, alerts, page headers, and more.</p>
+          <h4><a href="http://twbs.github.com/bootstrap/javascript.html">JavaScript plugins</a></h4>
+          <p>Similar to Components, these JavaScript plugins are interactive components for things like tooltips, popovers, modals, and more.</p>
+
+          <h2>List of components</h2>
+          <p>Together, the <strong>Components</strong> and <strong>JavaScript plugins</strong> sections provide the following interface elements:</p>
+          <ul>
+            <li>Button groups</li>
+            <li>Button dropdowns</li>
+            <li>Navigational tabs, pills, and lists</li>
+            <li>Navbar</li>
+            <li>Labels</li>
+            <li>Badges</li>
+            <li>Page headers and hero unit</li>
+            <li>Thumbnails</li>
+            <li>Alerts</li>
+            <li>Progress bars</li>
+            <li>Modals</li>
+            <li>Dropdowns</li>
+            <li>Tooltips</li>
+            <li>Popovers</li>
+            <li>Accordion</li>
+            <li>Carousel</li>
+            <li>Typeahead</li>
+          </ul>
+          <p>In future guides, we may walk through these components individually in more detail. Until then, look for each of these in the documentation for information on how to utilize and customize them.</p>
+        </section>
+
+
+
+        <!-- HTML template
+        ================================================== -->
+        <section id="Kini">
+          <div class="page-header">
+            <h1>Era Kini</h1>
+          </div>
+          <p class="lead">With a brief intro into the contents out of the way, we can focus on putting Bootstrap to use. To do that, we'll utilize a basic HTML template that includes everything we mentioned in the <a href="./getting-started.html#file-structure">File structure</a>.</p>
+          <p>Now, here's a look at a <strong>typical HTML file</strong>:</p>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          <p>To make this <strong>a Bootstrapped template</strong>, just include the appropriate CSS and JS files:</p>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          <p><strong>And you're set!</strong> With those two files added, you can begin to develop any site or application with Bootstrap.</p>
+        </section>
+
+
+
+     
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/twbs/bootstrap/releases">Changelog</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+
+    <script src="js/holder/holder.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+
+    <script src="js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
+  </body>
+</html>

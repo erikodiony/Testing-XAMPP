@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JAWA TIMUR &middot; Anything About East Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+	padding-bottom: 40px;
+	color: #CD853F;
+	background-color: #DDD5CC;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin-top: 55px;
+	margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+	background-color: #111111;
+	color: #111111;
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+	border: 0;
+	-webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.00);
+	-moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.00);
+	background-color: #F5E5D4;
+    }
+
+    /* Downsize the brand/Jawa Timur a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+	margin-top: 15px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+	margin: 80px 0; /* Space out the Bootstrap <hr> more */
+	background-color: #CD853F;
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 90px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 90px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+		
+		
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+    
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+
+<div class="container-narrow">
+<ul class="nav nav-pills">
+              <li class="active"><a href="#">Jawa Timur</a></li>
+              	<li><a href="Index.html">Beranda</a></li>
+                <li><a href="Budaya.html">Budaya</a></li>
+				<li><a href="Wisata.html">Wisata</a></li>
+				<li><a href="Kuliner.html">Kuliner</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sejarah<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  	<li class="divider"></li>
+                    <li><a href="Sejarah.html#Prasejarah">Era Prasejarah</a></li>
+                    <li><a href="Sejarah.html#Klasik">Era Klasik</a></li>
+                    <li><a href="Sejarah.html#Kolonial">Era Kolonial</a></li>
+                    <li><a href="Sejarah.html#Kini">Era Kini</a></li>
+                    <li class="divider"></li>
+                  </ul>
+                </li>
+	</ul>
+</div>
+
+        
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/examples/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Trowulan</h1>
+              <p class="lead">Merupakan Situs Purbakala, bekas Kerajaan Majapahit yang dahulu pernah Eksis di Abad ke-15 dan Merupakan ide Cikal bakal Berdirinya Negara Kesatuan Republik Indonesia.</p>
+              <a class="btn btn-large btn-primary" href="Trowulan.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/examples/slide-02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Reog dan Jaranan</h1>
+              <p class="lead">Merupakan Tarian Tradisional yang berasal dari Jawa Timur yang kini keberadaannya makin dilupakan Kaum Muda.</p>
+              <a class="btn btn-large btn-primary" href="ReogJaranan.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/examples/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Jembatan Suramadu</h1>
+              <p class="lead">Merupakan salah satu Jembatan Termegah dan Terpanjang yang dimiliki oleh Indonesia, tepatnya membentang di atas Selat Madura.</p>
+              <a class="btn btn-large btn-primary" href="Suramadu.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+		<div class="item">
+          <img src="img/examples/slide-04.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Gunung Bromo</h1>
+              <p class="lead">Merupakan salah satu Gunung Berapi yang dimiliki oleh Jawa Timur yang sampai sekarang masih menjadi Destinasi Wisata yang paling sering dikunjungi oleh Masyarakat Indonesia.</p>
+              <a class="btn btn-large btn-primary" href="Bromo.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+		<div class="item">
+          <img src="img/examples/slide-05.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Telaga Sarangan</h1>
+              <p class="lead">Merupakan salah satu Destinasi Utama Wisata Jawa Timur yang hingga kini masih terjaga Kealamiannya, tepatnya terletak di Lereng Gunung Lawu, Magetan Jawa Timur. </p>
+              <a class="btn btn-large btn-primary" href="Sarangan.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+		<div class="item">
+          <img src="img/examples/slide-06.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Nasi Pecel</h1>
+              <p class="lead">Merupakan Makanan Khas Jawa Timur yang terbuat dari Aneka Sayuran (Nasi Panas, Daun Kangkung, Daun Turi, Kacang Panjang, Kecambah, dll) serta dicampur dengan Sambal Kacang dan Rempeyek, sampai saat ini masih menjadi Menu Makanan Favorit Masyarakat Jawa Timur.</p>
+              <a class="btn btn-large btn-primary" href="NasiPecel.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+		<div class="item">
+          <img src="img/examples/slide-07.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Onde - Onde</h1>
+              <p class="lead">Merupakan Jajanan Pasar Khas Jawa Timur yang Hingga kini Masih Eksis di Era Globalisasi.</p>
+              <a class="btn btn-large btn-primary" href="Onde.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+		<div class="item">
+          <img src="img/examples/slide-08.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Es Dawet</h1>
+              <p class="lead">Merupakan Minuman Tradisional khas Jawa Timur yang hingga kini masih mudah dijumpai di Kios - kios Jajanan Pinggir Jalan.</p>
+              <a class="btn btn-large btn-primary" href="EsDawet.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+		<div class="item">
+          <img src="img/examples/slide-09.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Wedang Cemoe</h1>
+              <p class="lead">Merupakan Wedang Khas Jawa Timur yang biasa disajikan pada saat musim Hujan, karena Berkhasiat mampu menghangatkan Badan.</p>
+              <a class="btn btn-large btn-primary" href="WedangCemoe.html">Selengkapnya...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img src="img/examples/Budaya.jpg" alt="Budaya" class="img-rounded" data-src="holder.js/140x140">
+          <h2>Budaya</h2>
+          <p>Masyarakat Jawa Timur masih menjaga Kebudayaan Asli leluhur dipadu dengan Keramahan masyarakatnya, pastinya akan selalu terkenang di benak ketika mengunjunginya.<br>
+          </p>
+          <p><a href="Budaya.html" class="btn">Selengkapnya &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img src="img/examples/Wisata.jpg" alt="Wisata" class="img-rounded" data-src="holder.js/140x140">
+          <h2>Wisata</h2>
+          <p>Keindahan Alam serta masih banyaknya tempat Wisata yang masih terjaga Kealamianya, pastinya akan membuat Takjub dan akan terus mengekplorasinya tanpa bosan.</p>
+          <p><a href="Wisata.html" class="btn">Selengkapnya &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img src="img/examples/Kuliner.jpg" alt="Kuliner" class="img-rounded" data-src="holder.js/140x140">
+          <h2>Kuliner </h2>
+          <p>Ragam Kuliner Tradisional hingga Modern, serta mulai dari Level Jajanan Pasar sampai Level Restoran semua Hidangan Khas Jawa Timur tersedia. Dan pastinya menggugah selera.</p>
+          <p><a href="Kuliner.html" class="btn">Selengkapnya &raquo;</a></p>
+        </div>
+        <div>&nbsp;</div>
+        <!-- /.span4 -->
+      </div><!-- /.row -->
+
+      <!-- START THE FEATURETTES -->
+      
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="img/examples/EraPrasejarah.jpg" width="512" height="341" class="featurette-image pull-right">
+        <h2 class="featurette-heading"><a href="Sejarah.html#Prasejarah">Era Prasejarah </a></h2>
+        <p class="lead">Jawa Timur telah lama didiami oleh manusia - manusia Prasejarah jutaan tahun lalu, dan hingga kini masih sering ditemukan fosil - fosil manusia Purba yang nantinya dapat menyingkap tabir tentang teori asal - usul Manusia. </p>
+      </div>
+      
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="img/examples/EraKlasik.png" width="450" height="450" class="featurette-image pull-left">
+        <h2 class="featurette-heading"><a href="Sejarah.html#Klasik">Era Klasik </a></h2>
+        <p class="lead">Bisa dibilang Jawa Timur waktu lampau memiliki banyak Kerajaan - kerajaan dari yang kecil sampai kerajaan yang besar, bahkan Kerajaan terbesar yang pernah dimiliki oleh Indonesia pun cikal bakalnya ada di Jawa Timur. </p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="img/examples/EraKolonial.jpg">
+        <h2 class="featurette-heading"><a href="Sejarah.html#Kolonial">Era Kolonial </a></h2>
+        <p class="lead">Sudah sejak lama terjadi Gerakan - gerakan kaum muda Heroik untuk menghentikan aksi Kolonialisme oleh kaum penjajah, sebagai bentuk Protes tentang kebijakan kolonial yang menimbulkan penderitaan terhadap Masyarakat Jawa Timur.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img src="img/examples/EraKini.jpg" class="featurette-image pull-left">
+        <h2 class="featurette-heading"><a href="Sejarah.html#Kini">Era Kini </a></span></h2>
+        <p class="lead">Semakin bertambah majunya kehidupan masyarakat Jawa Timur mulai dari Pendidikan hingga Teknologi, secara tidak langsung ikut memberi sumbangsih atas kemajuan Indonesia. </p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Ke Atas <strong>^</strong></a></p>
+        <p>&copy; 2015 Design by <a href="http://site.ngezz.tk">./Ngezz</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="js/holder/holder.js"></script>
+  </body>
+</html>

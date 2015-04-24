@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting · Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+	height: 100%;
+	background-color: #DDD5CC;        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+.jumbotron {
+	margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 0px;
+    height: 250px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background: url('img/examples/slide-06.jpg');
+}
+
+      #wrap > .container {
+        padding-top: 60px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+      code {
+        font-size: 80%;
+      }
+
+    </style>
+    
+    
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    
+   
+    
+    
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="ico/favicon.png">
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                   <div class="container-narrow">
+	<ul class="nav nav-pills">
+     <li><a href="index.html" class="brand">Jawa Timur</a></li>
+              	<li><a href="index.html">Beranda</a></li>
+                <li><a href="Budaya.html">Budaya</a></li>
+				<li><a href="Wisata.html">Wisata</a></li>
+				<li class="active"><a href="Kuliner.html">Kuliner</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sejarah<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  	<li class="divider"></li>
+                    <li><a href="Sejarah.html#Prasejarah">Era Prasejarah</a></li>
+                    <li><a href="Sejarah.html#Klasik">Era Klasik</a></li>
+                    <li><a href="Sejarah.html#Kolonial">Era Kolonial</a></li>
+                    <li><a href="Sejarah.html#Kini">Era Kini</a></li>
+                    <li class="divider"></li>
+                  </ul>
+                </li>
+	</ul>
+</div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  
+</header>
+
+           
+           
+        </div>
+    </div>
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#Prasejarah"><i class="icon-chevron-right"></i> Era Prasejarah</a></li>
+          <li><a href="#Klasik"><i class="icon-chevron-right"></i> Era Klasik</a></li>
+          <li><a href="#Kolonial"><i class="icon-chevron-right"></i> Era Kolonial</a></li>
+          <li><a href="#Kini"><i class="icon-chevron-right"></i> Era Kini</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+
+        <!-- Prasejarah
+        ================================================== -->
+        <section id="Prasejarah">
+          <div class="page-header">
+            <h1>Era Prasejarah</h1>
+          </div>
+          <p class="lead"><img src="img/examples/EraPrasejarah.jpg"></p>
+          <p class="lead">Sejak abad ke-19 bahkan hingga sekarang, banyak peninggalan  pra sejarah Jawa Timur yang ditemukan. Tahun 1891, sebuah tim di bawah pimpinan seorang peneliti asal Belanda bernama Eugene Dubois telah menemukan fosil manusa purba di Trinil, Kabupaten Ngawi, Jawa Timur. Fosil manusia purba temuan tim Eugene Dubois ini kemudian diketahui berjenis Pithecanthropus Erectus. </p>
+          <p class="lead">Tak hanya itu, pada tahun 1934, tim ekspedisi yang dipimpin oleh GHR von Koenigswald juga menemukan fosil-fosil manusia purba Homo Erectus yang ditemukan di  sepanjang Bengawan Solo hingga di tepi Sungai Brantas, Mojokerto Jawa Timur. Menurut dugaan para ahli,  telah berusia kurang lebih 1.000.000 tahun.</p>
+          <p class="lead">Di sepanjang abad ke-20 masih ditemukan berbagai peninggalan pra sejarah Jawa Timur bahkan hingga saat ini. Tahun 1993, ditemukan sejumlah peralatan purba di sekitar Malang. Tahun 2002, di kawasan Teluk Pacitan ditemukan fosil manusia purba yang masih utuh beserta sejumlah perkakas kuno yang menyertainya. Terakhir, batu dolmen dan lumpang juga ditemukan di Malang pada tahun 2013. </p>
+
+          
+        </section>
+
+
+
+        <!-- File structure
+        ================================================== -->
+        <section id="Klasik">
+          <div class="page-header">
+            <h1>Era Klasik</h1>
+          </div>
+          <p class="lead"><img src="img/Examples/EraKlasik.png"></p>
+          <p class="lead">Akar peradaban Jawa Klasik berawal dari Kerajaan Tarumanegara di Jawa Barat (4Ms) dan Kerajaan Kanjuruhan (6Ms) di Jawa Timur. Dua kerajaan tertua di Jawa ini selanjutnya diikuti oleh lahirnya sebuah kerajaan besar yaitu Kerajaan Mataram Kuno (Wangsa Syailendra dan Sanjaya) di Jawa Tengah (8Ms), lambat laun
+        Peradaban “tengah” pun berpindah ke “timur” menjadi Kerajaan Medang (10Ms) yang dipimpin oleh Mpu Sindok. Era ini telah menjadi titik balik bangkitnya kerajaan-kerajaan Jawa Timur, yaitu Kadiri dan Jenggala (11Ms), Singhasari hingga Majapahit (13Ms) sampai pada akhirnya peradaban Islam pun datang mengantikan kerajaan bercorak Buddha Hindu tersebut.</section>
+
+
+
+        <!-- Contents
+        ================================================== -->
+        <section id="Kolonial">
+          <div class="page-header">
+            <h1>Era Kolonial</h1>
+          </div>
+          <p class="lead"><img src="img/examples/EraKolonial.jpg"></p>
+          <p class="lead">Dari Kedatangan Portugis sampai pendudukan jepang di Jawa Timur, telah banyak memicu Perang antar Masyarakat melawan pihak Penjajah, dari Perang Diponegoro (Perang Jawa) sampai Pemberontakan 10 November telah terjadi dan tidak sedikit Korban yang berjatuhan. </p>
+
+          <h2>&nbsp;</h2>
+        </section>
+
+
+
+        <!-- HTML template
+        ================================================== -->
+        <section id="Kini">
+          <div class="page-header">
+            <h1>Era Kini</h1>
+          </div>
+          <p class="lead"><img src="img/examples/EraKini.jpg"></p>
+          <p class="lead">Kini di Jaman Globalisasi semakin banyak daerah Industri yang tumbuh di Jawa Timur, Kemudahan Investasi serta Birokrasi yang tidak rumit mampu menciptakan lapangan Pekerjaan, Hingga akhirnya wilayah Jawa Timur ditetapkan sebagai Pusat Perdagangan untuk wilayah Indonesia Timur oleh Pemerintah Indonesia.</p>
+        </section>
+
+
+
+     
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <br>
+         <footer>
+        <p class="pull-right"><a href="#">Ke Atas <strong>^</strong></a></p>
+        <p>&copy; 2015 Design by <a href="http://site.ngezz.tk">./Ngezz</a></p>
+      </footer>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+
+    <script src="js/holder/holder.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+
+    <script src="js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
+  </body>
+</html>
