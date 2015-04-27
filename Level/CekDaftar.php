@@ -20,6 +20,6 @@ mysql_query("insert into akun (`username`,`password`,`level`)
 values('$_POST[user]','$_POST[pass]','$_POST[level]')");
 
 echo '<script type="text/javascript">alert("./Pendaftaran Berhasil! :( \n./Silahkan Kunjungi Halaman ./Masuk untuk Login! ^_^ ");</script>';
-echo '<meta http-equiv="refresh" content="1; url=../Database-2" />';
+echo '<meta http-equiv="refresh" content="1; url=../Level" />';
 }
 ?> 

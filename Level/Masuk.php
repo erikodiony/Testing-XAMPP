@@ -21,6 +21,6 @@ if ($password == $data['password'] && $level == $data['level'])
 	} 
 else 
 {	echo '<script type="text/javascript">alert("./Login Gagal! :( \n./Kombinasi Username / Password / Level tidak Cocok! :(");</script>';
-	echo '<meta http-equiv="refresh" content="1; url=../Database-2" />';
+	echo '<meta http-equiv="refresh" content="1; url=../Level" />';
 }
 ?> 

@@ -18,7 +18,7 @@
 </select></td>
 </tr>
 <tr>
-<tr><td><a href="../Database-2" style="text-decoration:none">Sudah punya akun ?</a></td></tr>
+<tr><td><a href="../Level" style="text-decoration:none">Sudah punya akun ?</a></td></tr>
 <td><br><input type="submit" name="proses" value="Daftar"></td>
 </tr>
 </table>

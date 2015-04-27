@@ -20,7 +20,7 @@
 </tr>
 <tr>
 <tr><td><a href="Daftar.php" style="text-decoration:none">Belum punya akun ?</a></td></tr>
-<tr><td><a href="LupaGanti.php" style="text-decoration:none">Lupa / Ganti Password ?</a></td></tr>
+<tr><td><a href="Lupa.php" style="text-decoration:none">Lupa Password ?</a></td></tr>
 <td><br><input type="submit" name="proses" value="Masuk"></td>
 </tr>
 </table>
