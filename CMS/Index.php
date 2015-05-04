@@ -19,7 +19,7 @@
 	.navbar-fixed-top { background:#F5DEB3 }
 	.navbar-fixed-bottom { background:#DEB887 }
 	.modal-backdrop { background:#8B4513 }
-	.jumbotron{color: #DAA520; background: url('bg.jpg') no-repeat center center !important;}
+	.jumbotron{color: #DAA520; background: url('Images/bg.jpg') no-repeat center center !important;}
 	div { color:#8B4513 }
   </style>
 </head>
