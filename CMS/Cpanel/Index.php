@@ -113,8 +113,8 @@
   </div>
   
   <div class="form-group">
-        <label class="col-md-offset-2 col-md-10">Ingin Menjadi Kontributor ?? Daftar <a href="Daftar.php">disini</a></label>
-		<label class="col-md-offset-2 col-md-10">Lupa Kata Sandi ?? Masuk <a href="Lupa.php">disini</a></label>
+        <label class="col-md-offset-2 col-md-10">Ingin Menjadi Kontributor ?? Daftar <a style="text-decoration:none" href="Daftar.php">disini</a></label>
+		<label class="col-md-offset-2 col-md-10">Lupa Kata Sandi ?? Masuk <a style="text-decoration:none" href="Lupa.php">disini</a></label>
   </div>  
   
   <div class="form-group">

@@ -106,7 +106,7 @@
 		</div>
   </div>
   <div class="form-group">
-	<label class="col-md-offset-2 col-md-10">Sudah Punya Akun ?? Masuk <a href="../Cpanel">disini</a></label>
+	<label class="col-md-offset-2 col-md-10">Sudah Punya Akun ?? Masuk <a style="text-decoration:none" href="../Cpanel">disini</a></label>
   </div>
   <div class="form-group">
     <div class="col-md-offset-2 col-md-10">

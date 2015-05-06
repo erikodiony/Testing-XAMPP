@@ -85,7 +85,7 @@
 					  $qryTampil=mysql_query($tampil); 
 					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 					?> 
-					<div align="left"><h4><strong><span class="glyphicon glyphicon-thumbs-up"></span> <a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+					<div align="left"><h4><strong><span class="glyphicon glyphicon-thumbs-up"></span> <a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 					<?php echo $dataTampil['judul']; ?></a></strong></h4></div>
 					<?php } ?> 
 				</div>
@@ -111,14 +111,14 @@
 				  ?> 
 					
 						<div>==============================================================================</div> 
-						<div align="center"><strong><span class="glyphicon glyphicon-star"></span><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<div align="center"><strong><span class="glyphicon glyphicon-star"></span><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 						<?php echo $dataTampil['judul']; ?></a></strong></div>
 						<div>==============================================================================</div> 
 						<div align="left"><strong><span class="glyphicon glyphicon-user"></span> <?php echo $dataTampil['kontrib']; ?>,</strong></div>
 						<br>
 						<div class="col-md-12" align="left"><strong><?php echo $dataTampil['head']; ?></strong></div>
 						<br>
-						<div align="right"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<div align="right"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 						<span class="glyphicon glyphicon-arrow-right"></span> Lihat Selengkapnya</a></strong></div>
 						<div align="right"><strong><span class="glyphicon glyphicon-calendar"></span> <?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div>
 						<div>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</div>						
@@ -153,11 +153,10 @@
 
 <!-- Modal -->
 <!-- Modal #ppPopuler -->
-<div class="modal fade" id="ppPopuler" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppPopuler" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-thumbs-up"></span> Terpopuler</h4>
       </div>
       <div class="modal-body">
@@ -178,13 +177,13 @@
 			  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 		  ?> 
 				<tr> 
-				<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+				<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 				<?php echo $dataTampil['judul']; ?></a></strong></div></td> 
 				<td><div align="center"><strong><?php echo $dataTampil['kategori']; ?></strong></div></td> 
 				<td><div align="center"><strong><?php echo $dataTampil['kontrib']; ?></strong></div></td> 
 				<td><div align="center"><strong><?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div></td> 
 				<td><div align="center">
-				<a href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+				<a href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 				</td>  
 				</tr>  
 		<?php } ?> 
@@ -198,11 +197,10 @@
 </div>
 
 <!-- Modal #ppTerbaru -->
-<div class="modal fade" id="ppTerbaru" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppTerbaru" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-star"></span> Terbaru</h4>
       </div>
       <div class="modal-body">
@@ -226,13 +224,13 @@
 					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 				  ?> 
 						<tr> 
-						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 					<?php echo $dataTampil['judul']; ?></a></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['kategori']; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['kontrib']; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div></td> 
 						<td><div align="center">
-						<a href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+						<a href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 						</td>  
 						</tr>  
 						<?php } ?> 
@@ -247,11 +245,10 @@
 </div>
 
 <!-- Modal #ppKategori -->
-<div class="modal fade" id="ppKategori" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppKategori" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-list"></span> Kategori</h4>
       </div>
       <div class="modal-body">
@@ -284,12 +281,12 @@
 					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 				  ?> 
 						<tr> 
-						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 					<?php echo $dataTampil['judul']; ?></a></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['kontrib']; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div></td> 
 						<td><div align="center">
-						<a href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+						<a href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 						</td>  
 						</tr> 
 						<?php } ?> 
@@ -325,12 +322,12 @@
 					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 				  ?> 
 						<tr> 
-						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 					<?php echo $dataTampil['judul']; ?></a></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['kontrib']; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div></td> 
 						<td><div align="center">
-						<a href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+						<a href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 						</td>  
 						</tr> 
 						<?php } ?> 
@@ -365,12 +362,12 @@
 					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 				  ?> 
 						<tr> 
-						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 					<?php echo $dataTampil['judul']; ?></a></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['kontrib']; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div></td> 
 						<td><div align="center">
-						<a href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+						<a href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 						</td>  
 						</tr> 
 						<?php } ?> 
@@ -405,12 +402,12 @@
 					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
 				  ?> 
 						<tr> 
-						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>">
+						<td><div align="center"><strong><a style="text-decoration:none" href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>">
 					<?php echo $dataTampil['judul']; ?></a></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['kontrib']; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['bulan']; ?>, <?php echo $dataTampil['tahun']; ?></strong></div></td> 
 						<td><div align="center">
-						<a href="Artikel.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+						<a href="Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 						</td>  
 						</tr> 
 						<?php } ?> 

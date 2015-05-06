@@ -224,7 +224,7 @@ tinymce.init({
 				<td><?php echo $dataTampil['tahun']; ?></td> 
 				<td><?php echo $dataTampil['kontrib']; ?></td> 
 				<td><div align="center">
-				<a href="Edit.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp <a href="../../Artikel.php?no=<?php echo $dataTampil['no'] ; ?>" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+				<a href="Edit.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp <a href="../../Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 				</td>  
 			  </tr> 
 		<?php } ?> 
@@ -275,7 +275,7 @@ tinymce.init({
 				<td><?php echo $dataTampil['tahun']; ?></td> 
 				<td><?php echo $dataTampil['kontrib']; ?></td> 
 				<td><div align="center">
-				<a href="CekHapus.php?no=<?php echo $dataTampil['no'] ; ?>"><span class="glyphicon glyphicon-trash"></span></a></div>
+				<a href="CekHapus.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-trash"></span></a></div>
 				</td> 
 			  </tr> 
 		<?php } ?> 
