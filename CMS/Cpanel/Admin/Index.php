@@ -176,6 +176,8 @@ tinymce.init({
   <li role="presentation" class="active"><a href="../Admin"><span class="glyphicon glyphicon-plus"></span> Tambah</a></li>
   <li role="presentation" data-toggle="modal" data-target="#ppEdit"><a href="#ppEdit"><span class="glyphicon glyphicon-edit"></span> Edit</a></li>
   <li role="presentation" data-toggle="modal" data-target="#ppHapus"><a href="#ppHapus"> <span class="glyphicon glyphicon-trash"></span> Hapus</a></li>
+  <li role="presentation" data-toggle="modal" data-target="#ppKomentar"><a href="#ppKomentar"> <span class="glyphicon glyphicon-comment"></span> Kelola Komentar</a></li>
+  <li role="presentation" data-toggle="modal" data-target="#ppUser"><a href="#ppUser"> <span class="glyphicon glyphicon-user"></span> Hapus User</a></li>
   <li role="presentation"><a href="../../../CMS" target="_blank"><span class="glyphicon glyphicon-eye-open"></span> Lihat Situs</a></li>
 	<p class="navbar-text navbar-right"> 
 	<a class="navbar-brand">
@@ -186,12 +188,11 @@ tinymce.init({
   
 
 <!-- Modal #ppEdit -->
-<div class="modal fade" id="ppEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppEdit" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Mengedit Artikel</h4>
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span> Mengedit Artikel</h4>
 		<h5>Pilih Salah Satu Artikel yang akan Anda Edit !</h5>
       </div>
       <div class="modal-body">
@@ -223,7 +224,7 @@ tinymce.init({
 				<td><?php echo $dataTampil['tahun']; ?></td> 
 				<td><?php echo $dataTampil['kontrib']; ?></td> 
 				<td><div align="center">
-				<a href="Edit.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-edit"></span></a><a href="../../Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+				<a href="Edit.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-edit"></span></a> <a href="../../Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a></div>
 				</td>  
 			  </tr> 
 		<?php } ?> 
@@ -237,12 +238,11 @@ tinymce.init({
 </div>
 
 <!-- Modal #ppHapus -->
-<div class="modal fade" id="ppHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppHapus" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Menghapus Artikel</h4>
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-trash"></span> Menghapus Artikel</h4>
 		<h5>Pilih Salah Satu Artikel yang akan Anda Hapus !</h5>
       </div>
       <div class="modal-body">
@@ -287,7 +287,104 @@ tinymce.init({
   </div>
 </div>
    
-  
+<!-- Modal #ppKomentar -->
+<div class="modal fade" id="ppKomentar" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-comment"></span> Kelola Komentar</h4>
+		<h5>Pilih Salah Satu Artikel yang akan Anda Kelola Komentarnya !</h5>
+      </div>
+      <div class="modal-body">
+       <h4>./List Artikel</h4>
+		<table class="table table-striped"> 
+			  <tr>
+				<td><div align="center"><strong><span class="glyphicon glyphicon-sort"></span></strong></div></td>
+				<td><div align="center"><strong><span class="glyphicon glyphicon-globe"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-bullhorn"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-tags"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-time"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-calendar"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-user"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-cog"></span></strong></div></td>
+			  </tr> 
+		  <?php 
+			  mysql_connect('localhost','root',''); 
+			  mysql_select_db('cms'); 
+			  $tampil="SELECT * FROM komentar, artikel WHERE komentar.judul=artikel.judul
+						ORDER BY komentar.urutan;"; 
+			  $tampil="SELECT * from artikel ORDER BY no ASC"; 
+			  $qryTampil=mysql_query($tampil); 
+			  $qryTampil=mysql_query($tampil); 
+			  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+		  ?> 
+			   <tr> 
+				<td><?php echo $dataTampil['no'] ; ?></td> 
+				<td><?php echo $dataTampil['judul']; ?></td> 
+				<td><?php echo $dataTampil['head']; ?></td> 
+				<td><?php echo $dataTampil['kategori']; ?></td> 
+				<td><?php echo $dataTampil['bulan']; ?></td> 
+				<td><?php echo $dataTampil['tahun']; ?></td> 
+				<td><?php echo $dataTampil['kontrib']; ?></td> 
+				<td><div align="center">
+				<a href="Komentar.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-comment"></span></a></div>
+				</td>
+			  </tr>
+			  
+		<?php } ?> 				
+		</table>		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal #ppUser -->
+<div class="modal fade" id="ppUser" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-user"></span> Hapus User</h4>
+		<h5>Pilih Salah Satu User yang akan Anda Hapus !</h5>
+      </div>
+      <div class="modal-body">
+       <h4>./List User</h4>
+		<table class="table table-striped"> 
+			  <tr>
+				<td><div align="center"><strong><span class="glyphicon glyphicon-user"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-lock"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-eye-open"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-cog"></span></strong></div></td>
+			  </tr> 
+		  <?php 
+			  mysql_connect('localhost','root',''); 
+			  mysql_select_db('cms'); 
+			  $tampil="SELECT * FROM akun WHERE `level`='User';"; 
+			  $qryTampil=mysql_query($tampil); 
+			  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+		  ?> 
+			   <tr> 
+				<td><?php echo $dataTampil['username'] ; ?></td> 
+				<td><?php echo $dataTampil['password']; ?></td> 
+				<td><?php echo $dataTampil['level']; ?></td> 
+				<td><div align="center">
+				<a href="cekHapusUser.php?username=<?php echo $dataTampil['username'] ; ?>&password=<?php echo $dataTampil['password'] ; ?>"><span class="glyphicon glyphicon-remove"></span></a></div>
+				</td>
+			  </tr>
+			  
+		<?php } ?> 				
+		</table>		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </div>
 </div>
 </body>

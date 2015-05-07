@@ -171,12 +171,13 @@ tinymce.init({
     <br><br><br><br><br>
 
 <!-- Navbar bawah -->
-  <nav class="navbar navbar-default navbar-fixed-bottom">
+<nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="../User"><span class="glyphicon glyphicon-plus"></span> Tambah</a></li>
   <li role="presentation" data-toggle="modal" data-target="#ppEdit"><a href="#ppEdit"><span class="glyphicon glyphicon-edit"></span> Edit</a></li>
   <li role="presentation" data-toggle="modal" data-target="#ppHapus"><a href="#ppHapus"><span class="glyphicon glyphicon-trash"></span> Hapus</a></li>
+  <li role="presentation" data-toggle="modal" data-target="#ppKomentar"><a href="#ppKomentar"> <span class="glyphicon glyphicon-comment"></span> Kelola Komentar</a></li>
   <li role="presentation"><a href="../../../CMS" target="_blank"><span class="glyphicon glyphicon-eye-open"></span> Lihat Situs</a></li>
 	<p class="navbar-text navbar-right"> 
 	<a class="navbar-brand">
@@ -187,11 +188,10 @@ tinymce.init({
   
 
 <!-- Modal #ppEdit-->
-<div class="modal fade" id="ppEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppEdit" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Mengedit Artikel</h4>
 		<h5>Pilih Salah Satu Artikel yang akan Anda Edit !</h5>
       </div>
@@ -238,11 +238,10 @@ tinymce.init({
 </div>
 
 <!-- Modal #ppHapus-->
-<div class="modal fade" id="ppHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ppHapus" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Menghapus Artikel</h4>
 		<h5>Pilih Salah Satu Artikel yang akan Anda Hapus !</h5>
       </div>
@@ -287,7 +286,60 @@ tinymce.init({
     </div>
   </div>
 </div>
-   
+
+<!-- Modal #ppKomentar -->
+<div class="modal fade" id="ppKomentar" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-comment"></span> Kelola Komentar</h4>
+		<h5>Pilih Salah Satu Artikel yang akan Anda Kelola Komentarnya !</h5>
+      </div>
+      <div class="modal-body">
+       <h4>./List Artikel</h4>
+		<table class="table table-striped"> 
+			  <tr>
+				<td><div align="center"><strong><span class="glyphicon glyphicon-sort"></span></strong></div></td>
+				<td><div align="center"><strong><span class="glyphicon glyphicon-globe"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-bullhorn"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-tags"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-time"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-calendar"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-user"></span></strong></div></td> 
+				<td><div align="center"><strong><span class="glyphicon glyphicon-cog"></span></strong></div></td>
+			  </tr> 
+		  <?php 
+			  mysql_connect('localhost','root',''); 
+			  mysql_select_db('cms'); 
+			  $tampil="SELECT * FROM komentar, artikel WHERE komentar.judul=artikel.judul
+						ORDER BY komentar.urutan;"; 
+			  $tampil="SELECT * from artikel Where `kontrib` = 'User' ORDER BY no ASC"; 
+			  $qryTampil=mysql_query($tampil); 
+			  $qryTampil=mysql_query($tampil); 
+			  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+		  ?> 
+			   <tr> 
+				<td><?php echo $dataTampil['no'] ; ?></td> 
+				<td><?php echo $dataTampil['judul']; ?></td> 
+				<td><?php echo $dataTampil['head']; ?></td> 
+				<td><?php echo $dataTampil['kategori']; ?></td> 
+				<td><?php echo $dataTampil['bulan']; ?></td> 
+				<td><?php echo $dataTampil['tahun']; ?></td> 
+				<td><?php echo $dataTampil['kontrib']; ?></td> 
+				<td><div align="center">
+				<a href="Komentar.php?judul=<?php echo $dataTampil['judul'] ; ?>"><span class="glyphicon glyphicon-comment"></span></a> &nbsp <a href="../../Artikel.php?judul=<?php echo $dataTampil['judul'] ; ?>" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a></div>
+				</td>
+			  </tr>
+			  
+		<?php } ?> 				
+		</table>		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
   
 </div>
 </div>

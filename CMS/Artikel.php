@@ -56,6 +56,11 @@ tinymce.init({
         {title: 'Test template 2', content: 'Test 2'}
     ]
 });
+$(document).on('focusin', function(e) {
+    if ($(event.target).closest(".mce-window").length) {
+        e.stopImmediatePropagation();
+    }
+});
 </script>
 </head>
 <body>
@@ -129,7 +134,7 @@ tinymce.init({
 		</form>
 		
 		<?php 
-		$sqlTampil="SELECT `urutan`, `mail`, `isikom`
+		$sqlTampil="SELECT `mail`, `isikom`
 					FROM komentar, artikel WHERE artikel.judul = '$judul' AND komentar.judul=artikel.judul
 					ORDER BY `urutan`; ";  
 		$qryTampil=mysql_query($sqlTampil);  

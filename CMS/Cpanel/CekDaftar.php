@@ -1,6 +1,5 @@
 <?php  
 include "Daftar.php";
-session_start();  
 mysql_connect('localhost', 'root', ''); 
 mysql_select_db('cms');  
 $username = $_POST['user'];
