@@ -14,9 +14,10 @@ else{ $NoUrut = $data['no'] + 1;}
 
 <html lang="en">
 <head>
-  <title>./Halaman Admin</title>
+  <title>./Hello World - Admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="../../favicon.ico">
   <link rel="stylesheet" href="../../Scripts/Bootstrap/css/bootstrap.min.css">
   <script type="text/javascript" src="../../Scripts/jquery.js"></script>
   <script type="text/javascript" src="../../Scripts/Bootstrap/js/bootstrap.min.js"></script>
@@ -197,7 +198,7 @@ tinymce.init({
       </div>
       <div class="modal-body">
 		<h4>./List Artikel</h4>
-		<table class="table table-striped"  > 
+		<table class="table table-striped"> 
 			  <tr>
 				<td><div align="center"><strong><span class="glyphicon glyphicon-sort"></span></strong></div></td>
 				<td><div align="center"><strong><span class="glyphicon glyphicon-globe"></span></strong></div></td> 

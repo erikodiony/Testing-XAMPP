@@ -13,6 +13,7 @@
   <title>./Hello World</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="favicon.ico">
   <link rel="stylesheet" href="Scripts/Bootstrap/css/bootstrap.min.css">
   <script type="text/javascript" src="Scripts/jquery.js"></script>
   <script type="text/javascript" src="Scripts/Bootstrap/js/bootstrap.min.js"></script>
@@ -88,7 +89,7 @@ $(document).on('focusin', function(e) {
 		<div align="left"><?php echo $dataTampil['isi']; ?></div> 
 		<div align="right"><span class="glyphicon glyphicon-user"></span> <?php echo $dataTampil['kontrib']; ?></div>				
 		<div align="right"><span class="glyphicon glyphicon-tags"></span> 
-		<a href="" style="text-decoration:none" data-dismiss="modal" data-toggle="modal" data-target="#ppKategori">&nbsp Kategori</a>
+		<a href="" style="text-decoration:none" data-dismiss="modal" data-toggle="modal" data-target="#ppKategori">&nbsp <?php echo $dataTampil['kategori']; ?></a>
 		&nbsp&nbsp
 		<span class="glyphicon glyphicon-calendar"></span>&nbsp 
 		<?php echo $dataTampil['bulan']; ?>&nbsp<?php echo $dataTampil['tahun']; ?>
@@ -117,7 +118,7 @@ $(document).on('focusin', function(e) {
 			<div class="col-md-8">
 				
 				<div class="input-group">
-				<input type="text" name="mail" class="form-control" placeholder="Isi E-Mail Anda..." aria-describedby="basic-addon2">
+				<input type="text" name="mail" class="form-control" placeholder="Isi Nama Anda..." aria-describedby="basic-addon2">
 				<textarea class="form-control" name="isikom" rows="15" placeholder="Isi Komentar..."></textarea>
 				<span class="input-group-addon" id="basic-addon2">
 				<span class="glyphicon glyphicon-edit"></span></span>

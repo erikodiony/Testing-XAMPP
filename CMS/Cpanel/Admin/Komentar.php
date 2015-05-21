@@ -10,10 +10,11 @@ include ('index.php');
 ?>
 <html lang="en">
 <head>
-  <title>./Hello World</title>
+  <title>./Hello World - Admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../Scripts/Bootstrap/css/bootstrap.min.css">
+   <link rel="icon" type="image/ico" href="../../favicon.ico">
   <script type="text/javascript" src="../../Scripts/jquery.js"></script>
   <script type="text/javascript" src="../../Scripts/Bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">

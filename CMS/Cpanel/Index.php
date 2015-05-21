@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>./Halaman Login</title>
+  <title>./Hello World - Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/ico" href="../favicon.ico">
   <link rel="stylesheet" href="../Scripts/Bootstrap/css/bootstrap.min.css">
   <script type="text/javascript" src="../Scripts/jquery.js"></script>
   <script type="text/javascript" src="../Scripts/Bootstrap/js/bootstrap.min.js"></script>
