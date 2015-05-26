@@ -35,7 +35,7 @@
 	</script>
 <style type="text/css">
 	body {background: #000000 url('../Images/bg.jpg') no-repeat center top;}
-	form {background: #ffffff; height:100%; margin: 10;}
+	form {background:url('../Images/bg-transparent.png') repeat top center; height:100%; margin: 10;}
 	a { color:#000000 }
 	label {color:#000000}
 	a:focus { color:#000000}

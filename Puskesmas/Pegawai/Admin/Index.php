@@ -19,6 +19,7 @@ include ('cek.php');
   <script type="text/javascript" src="../../Scripts/Validator/js/framework/bootstrap.js"></script>
   <script type="text/javascript" src="../../Scripts/jquery.bootstrap.wizard.min.js"></script>
   <script type="text/javascript" src="../../Scripts/FakeLoader/fakeLoader.min.js"></script>
+
 <style> 
 body {
 	background:url('../../Images/bg.jpg') no-repeat fixed top center;
@@ -158,7 +159,7 @@ width:93%;
 </marquee></h4></center>
 </div>
 	<div class="isi">
-	<h5><b>Selamat Datang, </b></h5>
+	<h5><b><?php echo "<p>Selamat Datang, ".$_SESSION['level']." (".$_SESSION['nama'].")</p>";?></b></h5>
 	<center><h4><b>Informasi Akun</b><h4></center>
 	<table class="table">
     <thead>

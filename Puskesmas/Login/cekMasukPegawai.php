@@ -13,7 +13,8 @@ $data = mysql_fetch_array($hasil);
 if ($passwordpgw == $data['pass_pegawai'] && $level == $data['jabatan']) 
 	{ 
 	echo '<script type="text/javascript">alert("./Login Sukses! ^_^ \n./Klik OK untuk Masuk ke Menu Utama! :)");</script>';
-  
+	
+	$_SESSION['nama'] = $data['nm_pegawai'];
 	$_SESSION['level'] = $data['jabatan'];     
 	$_SESSION['idpgw'] = $data['id_pegawai'];  
 	$_SESSION['passwordpgw'] = $data['pass_pegawai'];

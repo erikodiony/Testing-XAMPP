@@ -187,11 +187,11 @@ margin:0 auto;
 				</h4> 
 					<h5>Ini adalah <strong>"Aplikasi SISTEM INFORMASI ADMINISTRASI PUSKESMAS"</strong> yang mana Pelayanan PUSKESMAS <b>terdiri atas:</b> 
 						<h4>
-							<li>Poli Umum</li>
-							<li>Poli Mata</li>
 							<li>Poli Gigi</li>
 							<li>Poli Kesehatan Ibu Anak</li>
-							<li>Poli Gizi</li>
+							<li>Poli Mata</li>
+							<li>Poli THT</li>
+							<li>Poli Umum</li>
 							<li>Pelayanan Obat</li>
 						</h4>
 						Silahkan Login ke sistem untuk menggunakan pelayanan PUSKESMAS ini secara maksimal!

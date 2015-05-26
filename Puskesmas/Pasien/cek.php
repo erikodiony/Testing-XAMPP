@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ 
 if ($_SESSION['level'] == "Pasien")
 		{}
 else if ($_SESSION['level'] == "Admin")

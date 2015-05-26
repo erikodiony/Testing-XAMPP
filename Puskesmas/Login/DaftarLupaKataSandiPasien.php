@@ -69,9 +69,6 @@
 		margin-top: 5px;
 		margin-bottom:15px;
 		}
-	h3 img {
-	margin-left:235px;
-			}
 </style>
 </head>
 
@@ -81,13 +78,13 @@
 
 <!-- Modal #ppAwal -->
 <div class="modal fade" id="ppAwal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
+	<div class="modal-dialog modal-md">
 		<div class="modal-content">
 		
 			<!-- Modal #ppAwal Header -->
 			<div class="modal-header">
 				<h4 class="modal-title" id="myModalLabel">
-					<h3><img src="../Images/logo.jpg" alt="Logo" width="70" height="90">&nbsp &nbsp &nbsp Aplikasi SIA Puskesmas</h3>
+					<center><h3><img src="../Images/logo.jpg" alt="Logo" width="70" height="90">&nbsp &nbsp &nbsp Aplikasi SIA Puskesmas</h3></center>
 				</h4>
 			</div>
 			
