@@ -150,7 +150,7 @@ $(document).ready(function(){
 		
 			<!-- Modal #ppDaftar Header -->
 			<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span> Pendaftaran Pasien</h4>	
+					<h4 class="modal-title"><span class="glyphicon glyphicon-plus"></span> Pendaftaran Pasien</h4>	
 				<div align="left">Harap selalu menggunakan Nama Lengkap Pasien ketika melakukan Pendaftaran !</div>
 			</div>
 			
@@ -295,7 +295,6 @@ $(document).ready(function(){
 	</div>
 </div>
 
-
 <div class="container">
 	<div class="hero-unit">
 			<h3><center><img src="../../Images/logo.jpg" alt="Logo" width="70" height="90">&nbsp &nbsp &nbsp Aplikasi SIA Puskesmas</center></h3>
@@ -309,7 +308,6 @@ $(document).ready(function(){
 		<tr><th><a href="../Resepsionis" style="text-decoration:none"><span class="glyphicon glyphicon-stats"></span> &nbsp Statistik Pasien</a></th></tr>
 		<tr><th><a href="" style="text-decoration:none" data-toggle="modal" data-target="#ppDaftar"><span class="glyphicon glyphicon-plus"></span> &nbsp Pendaftaran Pasien</a></th></tr>
         <tr><th><a href="" style="text-decoration:none" data-toggle="modal" data-target="#ppHapus"><span class="glyphicon glyphicon-trash"></span> &nbsp Hapus Pasien</a></th></tr>
-		<tr><th><a href="../../Pasien" style="text-decoration:none"><span class="glyphicon glyphicon-info-sign"></span> &nbsp Info Pasien</a></th></tr>
 		<tr><th><a href="" style="text-decoration:none" data-toggle="modal" data-target="#ppBantuan"><span class="glyphicon glyphicon-question-sign"></span> &nbsp Bantuan</a></th></tr>
 		<tr><th><a href="../../Keluar.php" style="text-decoration:none"><span class="glyphicon glyphicon-log-out"></span> &nbsp Keluar</a></th></tr>
 	</thead>
@@ -373,7 +371,7 @@ $(document).ready(function(){
 						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
 						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
 						<td><div align="center"><strong>
-						<span data-toggle="intip" title="Info Pasien" class="glyphicon glyphicon-info-sign"></span>&nbsp 
+						<a href="InfoPasien.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>"  onclick="window.open('InfoPasien.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>', 'newwindow', 'width=675, height=800'); return false;"><span data-toggle="intip" title="Info Pasien" class="glyphicon glyphicon-info-sign"></span></a>
 						<a href="cekHapusPasien.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Hapus Pasien" class="glyphicon glyphicon-trash"></span></a>
 						</strong></div></td>
 						</tr> 
@@ -441,7 +439,6 @@ $(document).ready(function(){
 	document.getElementById('id_psn').readOnly = true;
 	document.getElementById('pass_psn').readOnly = true;
 </script>
-
 
 
 <!-- KontrolValidasi #formDaftar -->

@@ -1,6 +1,11 @@
 <html>
 <?php
 include ('cek.php');
+	mysql_connect('localhost','root',''); 
+	mysql_select_db('puskesmas');
+	$sqlTampil="select * from pasien";  
+	$qryTampil=mysql_query($sqlTampil);  
+	$dataTampil=mysql_fetch_array($qryTampil);  
 ?>
 <head>
   <title>&nbsp ./Puskesmas &nbsp- &nbspPasien &nbsp|</title>
@@ -66,6 +71,22 @@ margin:10px auto;
 padding:5px;
 width:93%;
 }
+
+</style>
+
+<!-- Keterangan Kursor -->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="intip"]').tooltip();   
+});
+</script>
+
+<!-- Konfig Validasi -->
+<style type="text/css"> 
+#formDaftar .inputGroupContainer .form-control-feedback,
+#formDaftar .selectContainer .form-control-feedback {
+    top: 0;
+    right: -20px; }
 </style>
 
 <!-- Judul Marquee -->
@@ -87,45 +108,35 @@ width:93%;
         });
 </script>
 
-<!-- Tampil Modal #ppAwal -->
-<script type="text/javascript">
-		$(document).ready(function() {
-    setTimeout(function() {
-      $('#ppAwal').modal('show');
-    }, 4500);
-});
-</script>
-
 </head>
 <body>
 <div class="fakeloader"></div>
 
-<!-- Modal #ppAwal -->
-<div class="modal fade" id="ppAwal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+<!-- Modal #ppBantuan -->
+<div class="modal fade" id="ppBantuan" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
 	<div class="modal-dialog modal-md">
 		<div class="modal-content">
 		
-			<!-- Modal #ppAwal Header -->
+			<!-- Modal #ppBantuan Header -->
 			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">
-					<center><h3><img src="../../Images/logo.jpg" alt="Logo" width="70" height="90">&nbsp &nbsp &nbsp Aplikasi SIA Puskesmas</h3></center>
-				</h4>
+					<h4 class="modal-title"><span class="glyphicon glyphicon-question-sign"></span> Bantuan</h4>
 			</div>
 			
-			<!-- Modal #ppAwal Body -->
+			<!-- Modal #ppBantuan Body -->
 			<div class="modal-body" >
 				
-					<h4>./Selamat Datang</h4>
-					<li>Harap Lengkapi Identitas diri Anda dengan Benar guna menunjang Kesehatan Anda.</li>
+					<h4>./Bantuan</h4>
+					<li>Selalu Cek Data Transaksi yg telah dilakukan tiap Pasien.</li>
+					<li>Harap Selalu Pantau aktifitas Pasien dalam Pelayanan Puskesmas.</li>
 					<li>Harap Klik Menu 'Keluar' setiap kali Anda selesai menggunakan Sistem ini.</li>
-					<li>Sebelum melakukan Pembayaran, Anda Bisa mengecek Info Pembayaran pada Menu Panel.</li>
-					<li>Apabila mengalami Kesulitan Penginputan Data bisa kontak Resepsionis untuk Bantuan.</li>
+					<li>Setelah Pasien melakukan Pembayaran, Selalu lakukan Refresh pada Sistem ini.</li>
+					
 			<br>
 				<h5 align="left"><b><strong>TTD</strong></b></h5>
-				<h5 align="left"><b><strong>Resepsionis</strong></b></h5>
+				<h5 align="left"><b><strong>Manajer</strong></b></h5>
 			</div>
 			
-			<!-- Modal #ppAwal Footer -->
+			<!-- Modal #ppBantuan Footer -->
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tutup</button>
 			</div>
@@ -139,13 +150,12 @@ width:93%;
 	</div>
 	<div class="row">
 	<div class="col-md-3">
-	<div class="kolom"><center><h3>Panel Info</h3></center>
-	<table class="table">
+	<div class="kolom"><center><h3><span class="glyphicon glyphicon-dashboard"></span>&nbsp Panel Info</h3></center>
+	<table class="table">  
     <thead>
 		<tr><th></th></tr>
-		<tr><th><a href="../../Pasien" style="text-decoration:none"><span class="glyphicon glyphicon-user"></span> &nbsp Info Akun</a></th></tr>
-        <tr><th><a href="../../Pasien" style="text-decoration:none"><span class="glyphicon glyphicon-edit"></span> &nbsp Edit Akun</a></th></tr>
-		<tr><th><a href="../../Pasien" style="text-decoration:none"><span class="glyphicon glyphicon-usd"></span> &nbsp Info Pembayaran</a></th></tr>
+		<tr><th><a href="../Assist.Dokter" style="text-decoration:none"><span class="glyphicon glyphicon-stats"></span> &nbsp Statistik Pasien</a></th></tr>
+		<tr><th><a href="" style="text-decoration:none" data-toggle="modal" data-target="#ppBantuan"><span class="glyphicon glyphicon-question-sign"></span> &nbsp Bantuan</a></th></tr>
 		<tr><th><a href="../../Keluar.php" style="text-decoration:none"><span class="glyphicon glyphicon-log-out"></span> &nbsp Keluar</a></th></tr>
 	</thead>
 	</table>
@@ -158,20 +168,344 @@ width:93%;
 </marquee></h4></center>
 </div>
 	<div class="isi">
-	<h5><b>Selamat Datang, </b></h5>
-	<center><h4><b>Informasi Akun</b><h4></center>
-	<table class="table">
-    <thead>
-		<tr><th></th></tr>
-		<tr><th><a href="../../Pasien" style="text-decoration:none">Info Akun</a></th></tr>
-        <tr><th><a href="../../Pasien" style="text-decoration:none">Edit Akun</a></th></tr>
-		<tr><th><a href="../../Pasien" style="text-decoration:none">Info Pembayaran</a></th></tr>
-    </thead>
-	</table>
+	<h5><b><?php echo "<p>Selamat Datang, ".$_SESSION['level']." (".$_SESSION['nama'].")</p>";?></b></h5>
+	<h5><b><?php date_default_timezone_set("Asia/Jakarta"); echo "Tanggal : " . date('d-m-Y')."</br>Pukul : " . date('H:i:s');?></b></h5>
+	<center><h4><b>Statistik Pasien</b><h4></center>
+		
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<!-- HideMenu Pantauan #poliGigi-->
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="text-decoration:none">
+				<span class="glyphicon glyphicon-eye-open"></span> Pantauan Apoteker</a> 
+			</h4>
+			</div>
+				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+				<div class="panel-body">
+				
+				 		<table class="table table-striped"> 
+						<thead>
+						<tr>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-user"></span>&nbsp ID Pasien</div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-Time"></span>&nbsp Daftar</span></div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-calendar"></span>&nbsp Daftar</span></div></strong></td>
+						
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Antrian Pemeriksaan" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Masuk</div></strong></td>
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Pemeriksaan Dokter" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Keluar</div></strong></td>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-cog"></span></div></strong></td>
+						</tr></thead>
+				  <?php 
+					  mysql_connect('localhost','root',''); 
+					  mysql_select_db('puskesmas'); 
+					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `tgl_masuk`,`2_Dokter`, `3_Apotek`
+					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `2_Dokter` = 'Tuntas' AND `3_Apotek` = 'x' 
+					ORDER BY pasien.id_pasien;"; 
+					  $qryTampil=mysql_query($tampil); 
+					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+				  ?> 
+						<tr> 
+						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
+						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['3_Apotek'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong>
+						<a href="TambahDataBeliObat.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>"  onclick="window.open('TambahDataBeliObat.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>', 'newwindow', 'width=675, height=800'); return false;"><span data-toggle="intip" title="Tamaah Pembelian Obat" class="glyphicon glyphicon-info-sign"></span></a>
+						</strong></div></td>
+						</tr> 
+						
+			
+
+						<?php } ?> 
+						</table>
+				
+				
+				</div>
+				</div>
+	</div>
+	
+	
+<!-- HideMenu Riwayat -->
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingSix">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="text-decoration:none">
+				<span class="glyphicon glyphicon-flag"></span> Riwayat</a>
+			</h4>   
+			</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+					<div class="panel-body">
+						
+						<div role="tabpanel">
+						<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#TabPoliGigi" aria-controls="home" role="tab" data-toggle="tab">Poli Gigi</a></li>
+								<li role="presentation"><a href="#TabPoliKIA" role="tab" data-toggle="tab">Poli Kesehatan Ibu Anak</a></li>
+								<li role="presentation"><a href="#TabPoliMata" role="tab" data-toggle="tab">Poli Mata</a></li>
+								<li role="presentation"><a href="#TabPoliTHT" role="tab" data-toggle="tab">Poli THT</a></li>
+								<li role="presentation"><a href="#TabPoliUmum" role="tab" data-toggle="tab">Poli Umum</a></li>
+							</ul>
+
+						<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="TabPoliGigi">
+								<table class="table table-striped"> 
+						<thead>
+						<tr>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-user"></span>&nbsp ID Pasien</div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-Time"></span>&nbsp Daftar</span></div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-calendar"></span>&nbsp Daftar</span></div></strong></td>
+						
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Antrian Pemeriksaan" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Masuk</div></strong></td>
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Pemeriksaan Dokter" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Keluar</div></strong></td>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-cog"></span></div></strong></td>
+						</tr></thead>
+				  <?php 
+					  mysql_connect('localhost','root',''); 
+					  mysql_select_db('puskesmas'); 
+					  $tampil="SELECT pasien.id_pasien, `tgl_masuk`, `jam_masuk`, `2_Dokter`, `3_Apotek`
+					  FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `3_Apotek` = 'Tuntas' AND `2_Dokter` = 'Tuntas' AND `r_rawat` = 'Poli Gigi'
+					ORDER BY pasien.id_pasien;"; 
+					  $qryTampil=mysql_query($tampil); 
+					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+				  ?> 
+						<tr> 
+						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
+						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['3_Apotek'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong>
+						<a href="TambahDataBeliObat.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>"  onclick="window.open('TambahDataBeliObat.php?id_pasien=<?php echo $dataTampil['id_pasien'] ; ?>', 'newwindow', 'width=675, height=800'); return false;"><span data-toggle="intip" title="Tamaah Pembelian Obat" class="glyphicon glyphicon-info-sign"></span></a>
+						</strong></div></td>
+						</tr> 
+						
+			
+
+						<?php } ?> 
+						</table>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="TabPoliKIA">
+									<table class="table table-striped"> 
+						<thead>
+						<tr>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-user"></span>&nbsp ID Pasien</div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-Time"></span>&nbsp Daftar</span></div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-calendar"></span>&nbsp Daftar</span></div></strong></td>
+						
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Antrian Pemeriksaan" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Masuk</div></strong></td>
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Pemeriksaan Dokter" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Keluar</div></strong></td>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-cog"></span></div></strong></td>
+						</tr></thead>
+				  <?php 
+					  mysql_connect('localhost','root',''); 
+					  mysql_select_db('puskesmas'); 
+					  $tampil="SELECT pasien.id_pasien, `tgl_masuk`, `jam_masuk`, `3_Apotek`, `2_Dokter`
+					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `3_Apotek` = 'Tuntas' AND `2_Dokter` = 'Tuntas' AND `r_rawat` = 'Poli Kesehatan Ibu Anak'
+					ORDER BY pasien.id_pasien;"; 
+					  $qryTampil=mysql_query($tampil); 
+					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+				  ?> 
+						<tr> 
+						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
+						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['3_Apotek'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong>
+						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
+						</strong></div></td>
+						</tr> 
+						
+			
+
+						<?php } ?> 
+						</table>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="TabPoliMata">
+								<table class="table table-striped"> 
+						<thead>
+						<tr>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-user"></span>&nbsp ID Pasien</div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-Time"></span>&nbsp Daftar</span></div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-calendar"></span>&nbsp Daftar</span></div></strong></td>
+						
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Antrian Pemeriksaan" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Masuk</div></strong></td>
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Pemeriksaan Dokter" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Keluar</div></strong></td>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-cog"></span></div></strong></td>
+						</tr></thead>
+				  <?php 
+					  mysql_connect('localhost','root',''); 
+					  mysql_select_db('puskesmas'); 
+					  $tampil="SELECT pasien.id_pasien, `tgl_masuk`, `jam_masuk`, `3_Apotek`, `2_Dokter`
+					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `3_Apotek` = 'Tuntas' AND `2_Dokter` = 'Tuntas' AND `r_rawat` = 'Poli Mata'
+					ORDER BY pasien.id_pasien;"; 
+					  $qryTampil=mysql_query($tampil); 
+					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+				  ?> 
+						<tr> 
+						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
+						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['3_Apotek'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong>
+						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
+						</strong></div></td>
+						</tr> 
+						
+			
+
+						<?php } ?> 
+						</table>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="TabPoliTHT">
+								<table class="table table-striped"> 
+						<thead>
+						<tr>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-user"></span>&nbsp ID Pasien</div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-Time"></span>&nbsp Daftar</span></div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-calendar"></span>&nbsp Daftar</span></div></strong></td>
+						
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Antrian Pemeriksaan" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Masuk</div></strong></td>
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Pemeriksaan Dokter" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Keluar</div></strong></td>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-cog"></span></div></strong></td>
+						</tr></thead>
+				  <?php 
+					  mysql_connect('localhost','root',''); 
+					  mysql_select_db('puskesmas'); 
+					  $tampil="SELECT pasien.id_pasien, `tgl_masuk`, `jam_masuk`, `3_Apotek`, `2_Dokter`
+					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `3_Apotek` = 'Tuntas' AND `2_Dokter` = 'Tuntas' AND `r_rawat` = 'Poli THT'
+					ORDER BY pasien.id_pasien;"; 
+					  $qryTampil=mysql_query($tampil); 
+					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+				  ?> 
+						<tr> 
+						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
+						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['3_Apotek'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong>
+						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
+						</strong></div></td>
+						</tr> 
+						
+			
+
+						<?php } ?> 
+						</table>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="TabPoliUmum">
+								<table class="table table-striped"> 
+						<thead>
+						<tr>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-user"></span>&nbsp ID Pasien</div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-Time"></span>&nbsp Daftar</span></div></strong></td> 
+						<td><strong><div align="center"><span class="glyphicon glyphicon-calendar"></span>&nbsp Daftar</span></div></strong></td>
+						
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Antrian Pemeriksaan" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Masuk</div></strong></td>
+						<td><strong><div align="center"><span data-toggle="intip" title="Proses Pemeriksaan Dokter" class="glyphicon glyphicon-hourglass"></span>&nbsp Pasien Keluar</div></strong></td>
+						<td><strong><div align="center"><span class="glyphicon glyphicon-cog"></span></div></strong></td>
+						</tr></thead>
+				  <?php 
+					  mysql_connect('localhost','root',''); 
+					  mysql_select_db('puskesmas'); 
+					  $tampil="SELECT pasien.id_pasien, `tgl_masuk`, `jam_masuk`, `3_Apotek`, `2_Dokter`
+					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `3_Apotek` = 'Tuntas' AND `2_Dokter` = 'Tuntas' AND `r_rawat` = 'Poli Umum'
+					ORDER BY pasien.id_pasien;"; 
+					  $qryTampil=mysql_query($tampil); 
+					  while ($dataTampil=mysql_fetch_array($qryTampil)) { 
+				  ?> 
+						<tr> 
+						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
+						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['3_Apotek'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
+						<td><div align="center"><strong>
+						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
+						</strong></div></td>
+						</tr> 
+						
+			
+
+						<?php } ?> 
+						</table>
+								</div>
+							</div>
+						</div>
+			
+					</div>
+				</div>
+	</div>
+
+	</div>
 	
 	</div>
 	</div>	
 	</div>
 </div>
 </body>
+
+<!-- ReadOnly r_rawat / dokter #formEdit -->
+<script>
+	document.getElementById('id_psn').readOnly = true;
+	document.getElementById('pass_psn').readOnly = true;
+</script>
+
+<!-- KontrolValidasi #formDaftar -->
+<script> 
+$(document).ready(function() {
+    // Generate a simple captcha
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+	
+    $('#formDaftar').formValidation({
+        message: 'Nilai ini tidak valid',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+			nm_psn: {
+                validators: {
+                    notEmpty: {
+                        message: 'Anda belum memasukkan "Nama Pasien" !'
+                    },
+                }
+            },
+			id_psn: {
+                validators: {
+                    notEmpty: {
+                        message: 'Anda belum memasukkan "ID Pasien" !'
+                    },
+                }
+            },
+            pass_psn: {
+                validators: {
+                    notEmpty: {
+                        message: 'Anda belum memasukkan "Kata Sandi" !'
+                    },
+                }
+            },
+			captcha: {
+                validators: {
+                    callback: {
+                        message: 'Jawaban Salah',
+                        callback: function(value, validator, $field) {
+                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                            return value == sum;
+                        }
+                    }
+                }
+            },
+        }
+    });
+});
+</script>
 </html>

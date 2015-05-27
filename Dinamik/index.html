@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Membuat Dynamic Field Keren Dengan Bootsrtap | Jin Toples Programming</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			text-align:center;
+			background-color:#61b3de;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:80%;
+			color:#666;
+		}
+		.entry{
+			margin-top:10px;
+		}
+		.wrap {
+			background: #f3f8fb;
+			width:730px;
+			margin:30px auto;
+			border: 4px dashed #61b3de;
+			border-radius:4px;
+			padding: 20px 5px;
+		}
+		h1 {
+			font-family:Georgia, "Times New Roman", Times, serif;
+			font-size:24px;
+			color:#645348;
+			font-style:italic;
+			text-decoration:none;
+			font-weight:100;
+			padding: 10px;
+		}
+		.form-control{
+			border-radius:0px;
+		}
+		
+		.btn {
+			border-radius:0px;
+		}
+	</style>
+	<script src="js/jquery-1.8.3.js"></script>
+	<script>
+		 $(function()
+	  {
+	   $(document).on('click', '.btn-add', function(e)
+	   {
+		e.preventDefault();
+
+		var controlForm = $('.controls:first'),
+		 currentEntry = $(this).parents('.entry:first'),
+		 newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+		newEntry.find('input').val('');
+		controlForm.find('.entry:not(:last) .btn-add')
+		 .removeClass('btn-add').addClass('btn-remove')
+		 .removeClass('btn-success').addClass('btn-danger')
+		 .html('<span class="glyphicon glyphicon-minus"></span>');
+	   }).on('click', '.btn-remove', function(e)
+	   {
+		$(this).parents('.entry:first').remove();
+
+		e.preventDefault();
+		return false;
+	   });
+	  }
+	 );
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<h1>Jin Toples Programming</h1>
+		<h1>Membuat Dynamic Field Keren Dengan Bootstrap</h1>
+		<form action="simpan.php" method="post">
+			<div class="controls"> 
+				<div class="form-group">
+					<div class="entry input-group">
+						<input class="form-control" name="data[]" type="text" placeholder="Entry..." required>
+						<input class="form-control" name="data2[]" type="text" placeholder="Entry..." required>
+						<input class="form-control" name="data3[]" type="text" placeholder="Entry..." required>
+						<span class="input-group-btn">
+							<button class="btn btn-success btn-add" type="button">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+						</span>
+					</div>
+			   </div>
+			   
+				<div class="form-group">
+					<div class="col-xs-5 col-xs-offset-1">
+						<button type="submit" class="btn btn-default">Submit</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -344,8 +344,6 @@ width:93%;
 											<option value="Diare / TBC">Diare / TBC</option>
 											<option value="Rematik / Asam Urat">Rematik / Asam Urat</option>
 											
-											<option class="divider" disabled>PELAYANAN OBAT</option>
-											<option value="Pelayanan Resep / Konsultasi Obat">Pelayanan Resep / Konsultasi Obat</option>
 										</select>       
 									</div>
 							</div>
@@ -545,12 +543,7 @@ function runkeluhan() {
 		document.getElementById("dokter").value = "Ria";
 	if(cek.value == "Rematik / Asam Urat")
 		document.getElementById("r_rawat").value = "Poli Umum";
-	
-	if(cek.value == "Pelayanan Resep / Konsultasi Obat")
-		document.getElementById("dokter").value = "Ajeng";
-	if(cek.value == "Pelayanan Resep / Konsultasi Obat")
-		document.getElementById("r_rawat").value = "Pelayanan Obat";
-	
+
 	}
 </script>
 
