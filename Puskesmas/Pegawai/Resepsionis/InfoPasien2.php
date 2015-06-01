@@ -1,18 +1,9 @@
 <html>
-<?php
-	include ('Index.php');
-      mysql_connect('localhost','root','');  
-      mysql_select_db('puskesmas');  
-      $sqlTampil="SELECT * FROM pasien WHERE id_pasien='$_GET[id_pasien]';";  
-      $qryTampil=mysql_query($sqlTampil);  
-      $dataTampil=mysql_fetch_array($qryTampil);  
-     ?> 
 <head>
-  <title>&nbsp ./Puskesmas &nbsp- &nbspPasien &nbsp|</title>
-  <meta charset="utf-8">
+<title>&nbsp ./Puskesmas &nbsp- &nbspAssist. Dokter &nbsp|</title>
+ <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
   <link rel="icon" type="image/ico" href="../../favicon.ico">
   <link rel="stylesheet" href="../../Scripts/Bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../Scripts/Validator/css/formValidation.css"/>
@@ -24,7 +15,7 @@
   <script type="text/javascript" src="../../Scripts/Validator/js/framework/bootstrap.js"></script>
   <script type="text/javascript" src="../../Scripts/jquery.bootstrap.wizard.min.js"></script>
   <script type="text/javascript" src="../../Scripts/FakeLoader/fakeLoader.min.js"></script>
-<style> 
+  <style> 
 body {
 	background:url('../../Images/bg.jpg') no-repeat fixed top center;
 }
@@ -53,30 +44,25 @@ margin:25px auto;
 padding:5px;
 width:95%;
 }
-. {
+.kolom {
+background:url('../../Images/bg-transparent.png') repeat top center;
 margin:10px auto;
 padding:5px;
-width:93%;
+width:78%;
 }
-.controls {
+.headisi {
 background:url('../../Images/bg-transparent.png') repeat top center;
 margin:10px auto;
 padding:5px;
 width:93%;
 }
-.entry {
+.isi {
+background:url('../../Images/bg-transparent.png') repeat top center;
 margin:10px auto;
 padding:5px;
 width:93%;
 }
 </style>
-
-<!-- Keterangan Kursor -->
-<script>
-$(document).ready(function(){
-    $('[data-toggle="intip"]').tooltip();   
-});
-</script>
 
 <!-- Konfig FormEdit -->
 <style type="text/css">
@@ -85,28 +71,27 @@ $(document).ready(function(){
 }
 </style>
 
-	<script type="text/javascript">
-		$(window).load(function()
-		{
-			$('#ppAwal').modal('show');
-			$('#ppAwal').data('bs.modal').isShown = true;
-		});
-	</script>
-
+<!--KontrolFakeLoader-->
+<script>
+    $(document).ready(function(){
+        $(".fakeloader").fakeLoader({
+            timeToHide:3000,
+            bgColor:"#2ecc71",
+            spinner:"spinner2"
+            });
+        });
+</script>
 </head>
-
-<!-- ModalMain #ppAwal -->
-<div class="modal fade" id="ppAwal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static"  aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-<!-- Header MainModal #ppAwal -->     
-	<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-info-sign"></span> Info Pasien</h4>
-	</div>
-
-<!-- Isi MainModal #ppAwal -->
-	<div class="modal-body">
+<?php  
+      mysql_connect('localhost','root','');  
+      mysql_select_db('puskesmas');  
+      $sqlTampil="SELECT * FROM pasien WHERE id_pasien='1001';";  
+      $qryTampil=mysql_query($sqlTampil);  
+      $dataTampil=mysql_fetch_array($qryTampil);  
+     ?> 
+<body>
+<div class="fakeloader"></div><br>
+	<div class="isi"><h4><strong>./Info Pasien</strong></h4>
 	<!-- Form Boostrap Wizard #formEdit -->
 				<form id="FormEdit" class="form-horizontal" action="cekInfoPasien.php" method="post">
 					<ul class="nav nav-pills">
@@ -121,9 +106,9 @@ $(document).ready(function(){
         
 						<!-- Tab Pertama #formEdit -->
 						<div class="tab-pane active" id="tabEdit-1">
-							<div class="form-group">
+							<div class="form-group inputGroupContainer">
 								<label class="col-xs-3 control-label">ID Pasien</label>
-									<div class="col-xs-5 inputGroupContainer">
+									<div class="col-xs-5">
 										<input type="text" class="form-control" readonly name="id_psn" value="<?php echo $dataTampil['id_pasien']; ?>"/>
 									</div>
 							</div>
@@ -328,30 +313,15 @@ $(document).ready(function(){
 									</div>
 							</div>
 						</div>
-					
-					<div class="form-group" align="right">
-							<div class="col-md-2">
-				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Edit / Simpan</button>	
 					</div>
+					<div>		
+				<button type="submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk"></span> Edit / Simpan</button>	
 					</div>
-					
-					</div>
-					
 				</form>
-				
-	</div>
-
-<!-- Footer MainModal #ppAwal -->
-      <div class="modal-footer">
-		
-		
-
-        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="location.href='../Resepsionis'"><span class="glyphicon glyphicon-remove"></span> Tutup</button>	
-	  </div>
-  </div>
-</div>
-</div>
-
+				</div>
+				</body>
+</html>
+<!-- Konfig Radio Gender/Agama/Status/MetodePembayaran #formEdit -->
 <script>
 var genderEdit = document.getElementsByName('gender');
 for (i = 0; i < genderEdit.length; i++) {
@@ -449,4 +419,3 @@ function runkeluhan() {
 	
 	}
 </script>
-</html>

@@ -167,6 +167,121 @@ $(document).ready(function(){
 	</div>
 </div>
 
+<!-- Modal #ppEditAkun -->
+<div class="modal fade" id="ppEditAkun" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-hidden="true">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+		
+			<!-- Modal #ppEditAkun Header -->
+			<div class="modal-header">
+					<h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span> Edit Akun</h4>	
+				<div align="left">Pastikan Anda memasukkan Identitas Akun yg sesuai dengan Identitas Diri Anda!</div>
+			</div>
+			
+			<!-- Modal #ppEditAkun Body -->
+			<div class="modal-body" >
+			
+					<ul class="nav nav-pills">
+						<li class="active"><a href="#tabEdit-1" data-toggle="tab"><span class="glyphicon glyphicon-user"></span>&nbsp Identitas Akun</a></li>
+						<li><a href="#tabEdit-2" data-toggle="tab"><span class="glyphicon glyphicon-picture"></span>&nbsp Identitas Foto</a></li>
+					</ul>
+					
+					<?php
+					mysql_connect('localhost','root',''); 
+					mysql_select_db('puskesmas');
+					$sqlTampil="select * from pegawai Where id_pegawai='$_SESSION[idpgw]'";  
+					$qryTampil=mysql_query($sqlTampil);  
+					$dataTampil=mysql_fetch_array($qryTampil);  
+					?>
+					
+					<!-- Tab Boostrap Wizard #formEditAkun -->
+					<div class="tab-content">
+					
+						<!-- Tab Pertama #Wizard #formEditAkun -->
+						<div class="tab-pane active" id="tabEdit-1">
+					<form id="formEditAkun" class="form-horizontal" action="cekEditAkun.php" method="post">
+							
+							<div class="form-group">
+							<label class="col-md-3 control-label">ID Pegawai</label>
+								<div class="col-md-6 inputGroupContainer">
+									<div class="input-group">
+									<input type="text" name="id_pgw" readonly class="form-control" value="<?php echo $dataTampil['id_pegawai'] ?>" placeholder="ID Pegawai..">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+									</div>
+								</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label">Nama Pegawai</label>
+								<div class="col-md-6 inputGroupContainer">
+									<div class="input-group">
+									<input type="text" name="nm_pgw" id="nm_pgw" class="form-control" placeholder="Nama Pegawai.." value="<?php echo $dataTampil['nm_pegawai']?>">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+									</div>
+								</div>
+						</div>
+							<div class="form-group">
+							<label class="col-md-3 control-label">Kata Sandi</label>
+								<div class="col-md-6 inputGroupContainer">
+									<div class="input-group">
+									<input type="text" name="pass_pgw" id="pass_pgw" class="form-control" placeholder="Kata Sandi.." value="<?php echo $dataTampil['pass_pegawai']?>">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+									</div>
+								</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label" id="captchaOperationEditAkun"></label>
+								<div class="col-md-3 inputGroupContainer">
+									<input type="text" class="form-control" name="captchaEditAkun" />
+								</div>
+						</div>
+							
+								<ul class="pager wizard">
+									<li class="next"><button type="submit" class="btn btn-primary" type="submit">Simpan</button></li>
+								</ul>
+					</form>
+						</div>
+		
+						<!-- Tab Kedua #Wizard #formEditAkun2 -->
+						<div class="tab-pane" id="tabEdit-2">
+					<form id="formEditAkun2" class="form-horizontal" action="cekEditAkun2.php" method="post" enctype="multipart/form-data">
+							<div class="form-group">
+							<label class="col-md-3 control-label">Foto Anda</label>
+								<div class="col-md-8 inputGroupContainer">
+								<img src="../../Images/Gambar.php?id_pegawai=<?php echo $_SESSION['idpgw']?>" class="img-thumbnail" alt="FotoProfil" width="100" height="100">
+								</div>
+						</div>
+					
+						
+						<div class="form-group">
+							<label class="col-md-3 control-label">Ganti Foto</label>
+								<div class="col-md-8 inputGroupContainer">
+								<div class="input-group">
+									<input type="file" class="form-control" name="anu2" />
+								<span class="input-group-addon"><span class="glyphicon glyphicon-camera"></span></span>
+								</div>
+								</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label" id="captchaOperationEditAkun2"></label>
+								<div class="col-md-3 inputGroupContainer">
+									<input type="text" class="form-control" name="captchaEditAkun2" />
+								</div>
+						</div>
+						<ul class="pager wizard">
+									<li class="next"><button type="submit" class="btn btn-primary" type="submit">Simpan</button></li>
+								</ul>
+					</form>
+						</div>
+					</div>				
+			</div>
+			
+			<!-- Modal #ppEditAkun Footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tutup</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="container">
 	<div class="hero-unit">
@@ -174,7 +289,12 @@ $(document).ready(function(){
 	</div>
 	<div class="row">
 	<div class="col-md-3">
-	<div class="kolom"><center><h3><span class="glyphicon glyphicon-dashboard"></span>&nbsp Panel Info</h3></center>
+	<div class="kolom"><br>
+	<center><img src="../../Images/Gambar.php?id_pegawai=<?php echo $_SESSION['idpgw']?>" class="img-thumbnail" alt="FotoProfil" width="150" height="150"></center>
+	<center><h5><b><strong><a href="#ppEditAkun" style="text-decoration:none" data-toggle="modal" data-target="#ppEditAkun"><span class="glyphicon glyphicon-edit"></span>&nbsp Edit Akun </a></strong></b></h5></center>
+	<hr>
+	
+	<center><h3><span class="glyphicon glyphicon-dashboard"></span>&nbsp Panel Info</h3></center>
 	<table class="table">  
     <thead>
 		<tr><th></th></tr>
@@ -191,8 +311,17 @@ $(document).ready(function(){
 <span>./Selamat Datang di Pelayanan SIA Puskesmas Kami, Untuk Informasi lebih lanjut bisa Kontak Resepsionis (Rawat Jalan: 08.00 - 15.00 Senin s/d Sabtu. | 08.00-12.00 Minggu. | Hari Besar Tutup.) </span>
 </marquee></h4></center>
 </div>
+
+<?php
+	mysql_connect('localhost','root',''); 
+	mysql_select_db('puskesmas');
+	$sqlTampil="select * from pegawai Where id_pegawai='$_SESSION[idpgw]'";  
+	$qryTampil=mysql_query($sqlTampil);  
+	$dataTampil=mysql_fetch_array($qryTampil);  
+?>
+
 	<div class="isi">
-	<h5><b><?php echo "<p>Selamat Datang, ".$_SESSION['level']." (".$_SESSION['nama'].")</p>";?></b></h5>
+	<h5><b><?php echo "<p>Selamat Datang, ".$_SESSION['level']." (".$dataTampil['nm_pegawai'].")</p>";?></b></h5>
 	<h5><b><?php date_default_timezone_set("Asia/Jakarta"); echo "Tanggal : " . date('d-m-Y')."</br>Pukul : " . date('H:i:s');?></b></h5>
 	<center><h4><b>Statistik Pasien</b><h4></center>
 		
@@ -222,7 +351,7 @@ $(document).ready(function(){
 				  <?php 
 					  mysql_connect('localhost','root',''); 
 					  mysql_select_db('puskesmas'); 
-					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `1_Edit`, `2_Dokter`
+					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `tgl_masuk`, `1_Edit`, `2_Dokter`
 					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `1_Edit` = 'Tuntas' AND `2_Dokter` = 'x' AND `r_rawat` = 'Poli Gigi'
 					ORDER BY pasien.id_pasien;"; 
 					  $qryTampil=mysql_query($tampil); 
@@ -231,10 +360,9 @@ $(document).ready(function(){
 						<tr> 
 						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
 						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['1_Edit'] ; ?></label></strong></div></td>
 						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
 						<td><div align="center"><strong>
 						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
 						</strong></div></td>
@@ -325,7 +453,7 @@ $(document).ready(function(){
 				  <?php 
 					  mysql_connect('localhost','root',''); 
 					  mysql_select_db('puskesmas'); 
-					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `1_Edit`, `2_Dokter`
+					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `tgl_masuk`, `1_Edit`, `2_Dokter`
 					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `1_Edit` = 'Tuntas' AND `2_Dokter` = 'x' AND `r_rawat` = 'Poli Mata'
 					ORDER BY pasien.id_pasien;"; 
 					  $qryTampil=mysql_query($tampil); 
@@ -334,10 +462,9 @@ $(document).ready(function(){
 						<tr> 
 						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
 						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['1_Edit'] ; ?></label></strong></div></td>
 						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
 						<td><div align="center"><strong>
 						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
 						</strong></div></td>
@@ -376,7 +503,7 @@ $(document).ready(function(){
 				  <?php 
 					  mysql_connect('localhost','root',''); 
 					  mysql_select_db('puskesmas'); 
-					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `1_Edit`, `2_Dokter`
+					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `tgl_masuk`, `1_Edit`, `2_Dokter`
 					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `1_Edit` = 'Tuntas' AND `2_Dokter` = 'x' AND `r_rawat` = 'Poli THT'
 					ORDER BY pasien.id_pasien;"; 
 					  $qryTampil=mysql_query($tampil); 
@@ -385,10 +512,9 @@ $(document).ready(function(){
 						<tr> 
 						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
 						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['1_Edit'] ; ?></label></strong></div></td>
 						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
 						<td><div align="center"><strong>
 						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
 						</strong></div></td>
@@ -429,7 +555,7 @@ $(document).ready(function(){
 				  <?php 
 					  mysql_connect('localhost','root',''); 
 					  mysql_select_db('puskesmas'); 
-					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `1_Edit`, `2_Dokter`
+					  $tampil="SELECT pasien.id_pasien, `jam_masuk`, `tgl_masuk`, `1_Edit`, `2_Dokter`
 					FROM proses, pasien WHERE proses.id_pasien=pasien.id_pasien AND `1_Edit` = 'Tuntas' AND `2_Dokter` = 'x' AND `r_rawat` = 'Poli Umum'
 					ORDER BY pasien.id_pasien;"; 
 					  $qryTampil=mysql_query($tampil); 
@@ -438,10 +564,9 @@ $(document).ready(function(){
 						<tr> 
 						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td> 
 						<td><div align="center"><strong><?php echo $dataTampil['jam_masuk'] ; ?></strong></div></td>
+						<td><div align="center"><strong><?php echo $dataTampil['tgl_masuk'] ; ?></strong></div></td>
 						<td><div align="center"><strong><label id="text1"><?php echo $dataTampil['1_Edit'] ; ?></label></strong></div></td>
 						<td><div align="center"><strong><label id="text2"><?php echo $dataTampil['2_Dokter'] ; ?></label></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
-						<td><div align="center"><strong><?php echo $dataTampil['id_pasien'] ; ?></strong></div></td>
 						<td><div align="center"><strong>
 						<a href="" class="modalTambahData" data-id="<?php echo $dataTampil['id_pasien'] ; ?>"><span data-toggle="intip" title="Tambah Data Pemeriksaan" class="glyphicon glyphicon-plus"></span></a>
 						</strong></div></td>
@@ -702,6 +827,89 @@ $(document).ready(function(){
         });
 </script>
 
+<!-- Konfig Validasi #FormEdit -->
+<style type="text/css">
+#formEditAkun .inputGroupContainer .form-control-feedback,
+#formEditAkun .selectContainer .form-control-feedback {
+    top: 0;
+    right: -20px;
+}
+#formEditAkun2 .inputGroupContainer .form-control-feedback,
+#formEditAkun2 .selectContainer .form-control-feedback {
+    top: 0;
+    right: -20px;
+}
+.tab-content {
+    margin-top: 20px;
+}
+</style>
+
+<!-- KontrolValidasi #formEditAkun -->
+<script> 
+$(document).ready(function() {
+    // Generate a simple captcha
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    $('#captchaOperationEditAkun').html([randomNumber(1, 10), '+', randomNumber(1, 20), '='].join(' '));
+	
+    $('#formEditAkun').formValidation({
+        message: 'Nilai ini tidak valid',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+			captchaEditAkun: {
+                validators: {
+                    callback: {
+                        message: 'Jawaban Salah',
+                        callback: function(value, validator, $field) {
+                            var items = $('#captchaOperationEditAkun').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                            return value == sum;
+                        }
+                    }
+                }
+            },
+        }
+    });
+});
+</script>
+
+<!-- KontrolValidasi #formEditAkun2 -->
+<script> 
+$(document).ready(function() {
+    // Generate a simple captcha
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    $('#captchaOperationEditAkun2').html([randomNumber(1, 10), '+', randomNumber(1, 20), '='].join(' '));
+	
+    $('#formEditAkun2').formValidation({
+        message: 'Nilai ini tidak valid',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+			captchaEditAkun2: {
+                validators: {
+                    callback: {
+                        message: 'Jawaban Salah',
+                        callback: function(value, validator, $field) {
+                            var items = $('#captchaOperationEditAkun2').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                            return value == sum;
+                        }
+                    }
+                }
+            },
+        }
+    });
+});
+</script>
+
 <!-- KontrolValidasi #formDaftar -->
 <script> 
 $(document).ready(function() {
@@ -709,7 +917,7 @@ $(document).ready(function() {
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
-    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+    $('#captchaOperation').html([randomNumber(1, 10), '+', randomNumber(1, 20), '='].join(' '));
 	
     $('#formDaftar').formValidation({
         message: 'Nilai ini tidak valid',

@@ -21,6 +21,6 @@
 	mysql_query($prosesDaftar);
 	mysql_query($prosesDaftarPemeriksaan);
 	mysql_query($prosesDaftarApotek);
-	echo '<script type="text/javascript">alert("./Data Berhasil Disimpan! :)");</script>';
+	echo '<script type="text/javascript">alert("./Akun Pasien Berhasil Ditambahkan! :)");</script>';
 	echo '<meta http-equiv="refresh" content="0; url=../Resepsionis" />';
 ?>

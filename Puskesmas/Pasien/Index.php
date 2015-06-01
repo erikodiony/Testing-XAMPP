@@ -179,9 +179,9 @@ width:93%;
 				<!-- Form Boostrap Wizard #formEdit -->
 				<form id="FormEdit" class="form-horizontal" action="cekEditAkun.php" method="post">
 					<ul class="nav nav-pills">
-						<li class="active"><a href="#tabEdit-1" data-toggle="tab">Identitas Diri</a></li>
-						<li><a href="#tabEdit-2" data-toggle="tab">Kontak & Alamat</a></li>
-						<li><a href="#tabEdit-3" data-toggle="tab">Keluhan & Pembayaran</a></li>
+						<li class="active"><a href="#tabEdit-1" data-toggle="tab"><span class="glyphicon glyphicon-user"></span>&nbsp Identitas Diri</a></li>
+						<li><a href="#tabEdit-2" data-toggle="tab"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp Kontak & Alamat</a></li>
+						<li><a href="#tabEdit-3" data-toggle="tab"><span class="glyphicon glyphicon-usd"></span>&nbsp Keluhan & Pembayaran</a></li>
 					</ul>
 					
 					<!-- Tab Boostrap Wizard #formEdit -->

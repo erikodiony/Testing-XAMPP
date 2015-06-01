@@ -193,7 +193,7 @@ width:93%;
 			</div>
 		</form>
 						
-				</div>
+			
 				</body>
 
 </html>

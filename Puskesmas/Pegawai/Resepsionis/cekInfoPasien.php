@@ -1,4 +1,4 @@
-<?php  
+<?php
 	mysql_connect('localhost','root','');  
     mysql_select_db('puskesmas');  
       
@@ -12,8 +12,5 @@
 	mysql_query($update);
     mysql_query($prosesEdit);
 	echo '<script type="text/javascript">alert("./Data Berhasil di Edit dan Disimpan! :)");</script>';
-	echo '<script>window.setTimeout("window.close()", 1000);</script>';
-	echo '<script>window.onunload = refreshParent;
-	function refreshParent(){window.opener.location.reload();}</script>';
+	echo '<meta http-equiv="refresh" content="0; url=../Resepsionis" />';
 ?>
-
